@@ -24,6 +24,7 @@ public class longestpalsubsequence {
     }
     public static void main(String[] args) {
     	String s= "popomalalamoxz";
+    	//String s="bb";
         System.out.println(longpalindrome(s));
     }
 }
