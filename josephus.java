@@ -13,5 +13,4 @@ public class josephus {
 		int b= sc.nextInt();
 		System.out.println(jos(a,b));
 	}
-
 }
