@@ -1,6 +1,6 @@
 package Test;
 import java.util.*;
-public class t2 {
+public class isPrime {
     public static void main(String[] args)
     {
     	System.out.println("Enter a number to find whether prime or not:");
