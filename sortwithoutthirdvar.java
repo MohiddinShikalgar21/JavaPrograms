@@ -1,7 +1,7 @@
 package Test;
 import java.util.*;
 
-public class t17 {
+public class sortwithoutthirdvar {
     public static void main(String[] args)
     {
     	Scanner sc= new Scanner(System.in);
