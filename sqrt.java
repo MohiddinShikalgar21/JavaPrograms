@@ -1,6 +1,6 @@
 package Test;
 import java.util.*;
-public class t10 
+public class sqrt 
 {
 	    public static double mySqrt(double n) {
 	    	return Math.pow(n, 0.5);
