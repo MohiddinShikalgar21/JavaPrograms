@@ -1,6 +1,6 @@
 package Test;
 import java.util.*;
-public class t8 
+public class sample8 
 {
     public static void main(String[] args)
     {
