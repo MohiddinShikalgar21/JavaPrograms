@@ -1,6 +1,6 @@
 package Test;
 import java.util.*;
-public class t5 {
+public class palindrome {
     public static void main(String[] args)
     {
     	System.out.println("Enter a number to check whether palindrome or not:");
