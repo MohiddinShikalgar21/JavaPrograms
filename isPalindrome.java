@@ -1,6 +1,6 @@
 package Test;
 import java.util.*;
-public class t4 {
+public class isPalindrome {
 	public static void main(String[] args)
 	{
 		String rev="";
