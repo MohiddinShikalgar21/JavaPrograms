@@ -1,7 +1,7 @@
 package Test;
 import java.util.*;
 import java.util.Arrays;
-public class t16 {
+public class meanofnelements {
     public static void main(String[] args)
     {
         Scanner sc= new Scanner(System.in);
