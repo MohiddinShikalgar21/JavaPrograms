@@ -1,6 +1,6 @@
 package Test;
 import java.util.*;
-public class t18 {
+public class findfactorial {
     public static int factorial(int n)
     {
     	if(n==1) return 1;
