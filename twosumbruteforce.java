@@ -1,6 +1,6 @@
 package Test;
 import java.util.*;
-public class t9 {
+public class twosumbruteforce {
     public static void main(String[] args)
     {
     	Scanner sc=new Scanner(System.in);
