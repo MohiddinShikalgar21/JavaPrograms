@@ -1,6 +1,6 @@
 package Test;
 import java.util.*;
-public class t7 {
+public class nelementaverageaverage {
     public static void main(String[] args)
     {
     	Scanner sc=new Scanner(System.in);
