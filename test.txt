@@ -1,0 +1,47 @@
+import io.vertx.core.Vertx;
+import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mongo.MongoClient;
+
+public class FundApprovalHandler {
+
+    private final MongoClient mongoClient;
+
+    public FundApprovalHandler(Vertx vertx, JsonObject mongoConfig) {
+        this.mongoClient = MongoClient.create(vertx, mongoConfig);
+    }
+
+    public void approveFund(JsonObject requestBody, Handler<AsyncResult<JsonObject>> resultHandler) {
+        double fundAmount = requestBody.getDouble("amount");
+
+        // Validate the request data
+        if (Double.isNaN(fundAmount) || fundAmount <= 0.0) {
+            resultHandler.handle(Future.failedFuture("Invalid fund amount."));
+            return;
+        }
+
+        // Assuming that the predefined amount is $1000
+        double predefinedAmount = 1000.0;
+
+        JsonObject response = new JsonObject();
+        if (fundAmount <= predefinedAmount) {
+            // Perform database interaction to store the activity and its fund amount
+            JsonObject activity = new JsonObject()
+                    .put("name", requestBody.getString("activityName"))
+                    .put("fundAmount", fundAmount);
+
+            mongoClient.save("activities", activity, result -> {
+                if (result.succeeded()) {
+                    response.put("approved", true);
+                    response.put("message", "Funds approved for the activity.");
+                    resultHandler.handle(Future.succeededFuture(response));
+                } else {
+                    resultHandler.handle(Future.failedFuture("Failed to store activity data."));
+                }
+            });
+        } else {
+            response.put("approved", false);
+            response.put("message", "Funds exceed the predefined limit. Approval required from higher authority.");
+            resultHandler.handle(Future.succeededFuture(response));
+        }
+    }
+}
